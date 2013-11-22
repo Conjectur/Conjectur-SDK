@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APIKey</key>
+	<string>90893bce6e425c051d9d9342c0a1b8e72eedd37ae629519836d5e1ce9694ed39</string>
+	<key>iTunesID</key>
+	<string>9817286312</string>
+	<key>AppName</key>
+	<string>ConjecturSDK</string>
+	<key>CampaignToken</key>
+	<string>conjecturExample</string>
+</dict>
+</plist>
