@@ -12,9 +12,9 @@ If you have not done so already, download the SDK from
 
 - When prompted, select "copy files to project folder." Linked files outside of the project folder may not compile.
 
-![](http://images.conjectur.com/020_drag-drop.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/020_drag-drop.png)
 
-![](http://images.conjectur.com/022_confirmation.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/022_confirmation.png)
 
 ### Customize the Conjectur-SDK Property List
 
@@ -24,7 +24,7 @@ If you have not done so already, download the SDK from
 
 Or use the already customized ConjecturSDK.plist your account representative provided for you.
 
-![](http://images.conjectur.com/030_plist.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/030_plist.png)
 
 ### Customize the Application Delegate
 
@@ -38,7 +38,7 @@ Or use the already customized ConjecturSDK.plist your account representative pro
     [ConjecturSDK trackLaunch]
     ```
 
-![](http://images.conjectur.com/040_appDelegate.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/040_appDelegate.png)
 
 ### Enable the Conjectur-SDK Library
 
@@ -54,10 +54,10 @@ If you do not see it there,
 
 - Verify that the library appears in the list.
 
-![](http://images.conjectur.com/050_addLib.png)
-![](http://images.conjectur.com/051_addLibOther.png)
-![](http://images.conjectur.com/052_addLibBrowse.png)
-![](http://images.conjectur.com/053_addedLib.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/050_addLib.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/051_addLibOther.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/052_addLibBrowse.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/053_addedLib.png)
 
 Select libConjecturSDK.a from the list of available libraries.
 
@@ -67,7 +67,7 @@ If you are an Unlock Partner, you will need to make two additional modifications
 
 - Using the navigator, open your application's plist file, and add a new URL Scheme with the unlock URL your account representative has provided for you.
 
-![](http://images.conjectur.com/071_UrlScheme.png)
+![](http://images.conjectur.com/documentation/Conjectur-SDK/071_UrlScheme.png)
 
 - Then add the following code to your application handleOpenURL function in your main applicationdelegate.m file
 
