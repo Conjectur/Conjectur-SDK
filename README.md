@@ -1,32 +1,90 @@
 Conjectur-SDK
 =============
 
-Integrating the SDK
+### Before You Begin
 
-1: If you have not done so already, download the SDK from https://github.com/Conjectur/Conjectur-SDK/.
+If you have not done so already, download the SDK from
+[our Github page](https://github.com/Conjectur/Conjectur-SDK/) ([https://github.com/Conjectur/Conjectur-SDK/](https://github.com/Conjectur/Conjectur-SDK/)).
 
-2: Drag and drop ConjecturSDK.h and lib.ConjecturSDK.a into your project's SDK directory, or wherever you have chosen to store such files. If this is the first SDK you are including, you may have to create this directory.  When prompted, select "copy files to project folder."  Linked files outside of the project folder may not compile.
+### Importing Conjectur-SDK files
 
-![Place ConjecturSDk.h and lib.ConjecturSDK.a within the project directory](http://conjectur.com/images/SDK/01.png)
+- Drag and drop ConjecturSDK.h, ConjecturSDK.plist, and libConjecturSDK.a into your project's SDK directory, or wherever you have chosen to store such files.  If this is the first SDK you are including, you may have to create this directory.
 
-3: Using the navigator, open your application's plist file, and add a new URL Scheme with the unlock URL your account representative has provided for you.
+- When prompted, select "copy files to project folder." Linked files outside of the project folder may not compile.
 
-![Add the SDK and your unique unlock URL to your applications' plist.](http://conjectur.com/images/SDK/02.png)
+![](http://images.conjectur.com/020_drag-drop.png)
 
-4: Modify the ConjecturSDK.h file with your campaign token and api_key provided by your account representative.  Also be sure to modify "appname" and "appid" with your itunes appname and id.
+![](http://images.conjectur.com/022_confirmation.png)
 
-![All 4 lines should be modified to show your unique information.](http://conjectur.com/images/SDK/03.png)
+### Customize the Conjectur-SDK Property List
 
-5: Add #import "conjectursdk.h" to the top of your main applicationdelegate.m, and add the ConjecturSDK trackLaunch code to your application didFinishLaunching function.
+- Enter the CampaignToken and APIKey provided by your account representative.
 
-![Import conecjturSDK.h and add the trackLaunch code to the didFinishLaunching function.](http://conjectur.com/images/SDK/04.png)
+- Also be sure to modify "AppName" and "iTunesID" with your itunes appname and id.
 
-6: Open project setting by selecting the project in xcode and selecting your target.  Scroll down to "linked frameworks and libraries", and click the plus sign. Select libConjecturSDK.a from the list of available libraries.
+Or use the already customized ConjecturSDK.plist your account representative provided for you.
 
-![Add libConjecturSDK.a to your linked frameworks and libraries.](http://conjectur.com/images/SDK/05.png)
+![](http://images.conjectur.com/030_plist.png)
 
-7: If you are an unlock partner, add the ConjecturSDK trackUnlock:url code to your application handleOpenURL function in your main applicationdelegate.m file.  Others should ignore this step.
+### Customize the Application Delegate
 
-![Unlock partners, add the trackUnlock:url code to your application delegate.](http://conjectur.com/images/SDK/06.png)
+- Add the following code to the top of your main AppDelegate.m:
+    ```objective-c
+    #import "ConjecturSDK.h"
+    ```
 
-You're done!  Conjectur-SDK should be fully integrated.  Feel free to contact your account representative with problems or for additional information.
+- Then add the following code to your application didFinishLaunching function:
+    ```objective-c
+    [ConjecturSDK trackLaunch]
+    ```
+
+![](http://images.conjectur.com/040_appDelegate.png)
+
+### Enable the Conjectur-SDK Library
+
+- Open project setting by selecting the project in Xcode, and selecting your target. Scroll down to "linked frameworks and libraries."  You should already see libConjecturSDK.a listed as required.
+
+If you do not see it there,
+
+- click the + sign
+
+- select "Add Other..."
+
+- browse for the libConjecturSDK.a file and select it.
+
+- Verify that the library appears in the list.
+
+![](http://images.conjectur.com/050_addLib.png)
+![](http://images.conjectur.com/051_addLibOther.png)
+![](http://images.conjectur.com/052_addLibBrowse.png)
+![](http://images.conjectur.com/053_addedLib.png)
+
+Select libConjecturSDK.a from the list of available libraries.
+
+### Setup for Unlock Partners
+
+If you are an Unlock Partner, you will need to make two additional modifications.
+
+- Using the navigator, open your application's plist file, and add a new URL Scheme with the unlock URL your account representative has provided for you.
+
+![](http://images.conjectur.com/071_UrlScheme.png)
+
+- Then add the following code to your application handleOpenURL function in your main applicationdelegate.m file
+
+    ```objective-c
+    - (BOOL)application:(UIApplication *)application
+                openURL:(NSURL *)url
+      sourceApplication:(NSString *)sourceApplication
+             annotation:(id)annotation
+    {
+        [ConjecturSDK trackUnlock:url];
+
+        return YES;
+    }
+    ```
+
+### You're done!
+
+The Conjectur-SDK should be fully integrated.
+
+Feel free to contact your account representative with problems or for additional information.
