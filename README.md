@@ -59,8 +59,6 @@ If you do not see it there,
 ![](http://images.conjectur.com/documentation/Conjectur-SDK/052_addLibBrowse.png)
 ![](http://images.conjectur.com/documentation/Conjectur-SDK/053_addedLib.png)
 
-Select libConjecturSDK.a from the list of available libraries.
-
 ### Setup for Unlock Partners
 
 If you are an Unlock Partner, you will need to make two additional modifications.
