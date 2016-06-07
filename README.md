@@ -1,6 +1,8 @@
 Conjectur-SDK
 =============
 
+### Current Version 2.1.3
+
 ### Before You Begin
 
 If you have not done so already, download the SDK from
